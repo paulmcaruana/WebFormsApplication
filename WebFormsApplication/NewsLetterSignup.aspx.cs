@@ -11,7 +11,19 @@ namespace WebFormsApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!Page.IsPostBack)
+            {
+                ltMessage.Text = "Welcome to the Newsletter Signup Page!";
+            }
+        }
 
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+
+            // TODO: Validate and save email to data storage
+
+            ltMessage.Text = "Your email has been subscribed to our newsletter";
         }
     }
 }
